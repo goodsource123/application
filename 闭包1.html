@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>闭包概念理解</title>
+</head>
+<body>
+<script>
+//形成了闭包
+    function outer(x){
+        function inner(y){
+            console.log(x+y);
+        }
+        return inner;
+    }
+
+    var inn=outer(3);//数字3传入outer函数后，inner函数中x便会记住这个值
+    console.log(inn)
+    inn(5);//outer函数执行完  返回的是inner函数，传入5对y进行赋值
+
+</script>
+</body>
+</html>
